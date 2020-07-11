@@ -33,8 +33,10 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        inputController = GameManager.GetInstance().GetInputController();
         // TODO: research about retrieving components using getters versus getting them in Awake/Start
+        
+        inputController = GameManager.GetInstance().GetInputController();
+        GameManager.GetInstance().LocalPlayer = this;
     }
 
     void Update()

@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager
 {
+    public event Action<Player> OnLocalPlayerJoined;
     private GameObject gameObject;
     private InputController inputController;
 
@@ -30,5 +32,19 @@ public class GameManager
         }
 
         return inputController;
+    }
+
+    private Player localPlayer;
+    public Player LocalPlayer
+    {
+        get
+        {
+            return localPlayer;
+        }
+        set
+        {
+            localPlayer = value;
+            OnLocalPlayerJoined?.Invoke(localPlayer);
+        }
     }
 }
