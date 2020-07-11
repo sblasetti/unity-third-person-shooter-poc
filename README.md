@@ -11,3 +11,7 @@
   - GameManager triggers the event to notify that local player joined
   - The camera handles the event and gets a reference to the player
 - Add the camera script to the MainCamera game object
+
+## Episode 4
+
+- Uses linear interpolation to handle camera movement transitions (LERP)

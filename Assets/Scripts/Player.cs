@@ -19,8 +19,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     MouseInput mouseControl;
     InputController inputController;
-    MoveController moveController;
+    Vector2 mouseInput;
 
+    MoveController moveController;
     public MoveController GetMoveController()
     {
         if (moveController == null)
@@ -43,5 +44,8 @@ public class Player : MonoBehaviour
     {
         var direction = new Vector2(inputController.Vertical * speed, inputController.Horizontal * speed);
         GetMoveController().Move(direction);
+
+        mouseInput.x = Mathf.Lerp(mouseInput.x, inputController.MouseCoordinates.x, 1 / mouseControl.Damping.x);
+        transform.Rotate(Vector3.up, mouseInput.x * mouseControl.Sensitivity.x);
     }
 }
