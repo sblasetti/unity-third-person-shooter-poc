@@ -6,6 +6,9 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField]
     float rateOfFire;
+    [SerializeField]
+    Projectile projectile;
+
     [HideInInspector]
     Transform muzzle;
 
@@ -21,10 +24,12 @@ public class Shooter : MonoBehaviour
     public virtual void Fire()
     {
         canFire = (Time.time >= nextFireAllowed);
-        if (canFire)
-        {
-            nextFireAllowed = Time.time + rateOfFire;
-        }
+        if (!canFire) return;
+
+        nextFireAllowed = Time.time + rateOfFire;
+
+        Instantiate(projectile, muzzle.position, muzzle.rotation);
+
     }
 
     // Update is called once per frame
