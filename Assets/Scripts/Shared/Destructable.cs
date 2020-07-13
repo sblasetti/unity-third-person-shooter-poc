@@ -13,6 +13,11 @@ public class Destructable : MonoBehaviour
 
     float damageTaken;
 
+    public void Reset()
+    {
+        damageTaken = 0;
+    }
+
     public float GetHitPointsRemaining() {
         return hitPoints - damageTaken;
     }

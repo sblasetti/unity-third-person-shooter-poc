@@ -9,6 +9,7 @@ public class GameManager
     private GameObject gameObject;
     private InputController inputController;
     private Timer timer;
+    private Respawner respawner;
 
     #region Singleton
     private static GameManager gameManager;
@@ -19,6 +20,8 @@ public class GameManager
             gameManager = new GameManager();
             gameManager.gameObject = new GameObject("_gameManager");
             gameManager.gameObject.AddComponent<InputController>();
+            gameManager.gameObject.AddComponent<Timer>();
+            gameManager.gameObject.AddComponent<Respawner>();
         }
 
         return gameManager;
@@ -43,6 +46,16 @@ public class GameManager
         }
 
         return timer;
+    }
+
+    public Respawner GetRespawner()
+    {
+        if (respawner == null)
+        {
+            respawner = gameObject.GetComponent<Respawner>();
+        }
+
+        return respawner;
     }
 
     private Player localPlayer;

@@ -9,17 +9,25 @@ namespace Assets.Scripts
 {
     public class Health : Destructable
     {
+        [SerializeField]
+        float respawnTimeInSeconds;
+
         public override void Die()
         {
             base.Die();
 
-            print("we died");
+            GameManager.GetInstance().GetRespawner().Despawn(gameObject, respawnTimeInSeconds);
         }
 
         public override void TakeDamage(float amount)
         {
             base.TakeDamage(amount);
             print($"Remaining {GetHitPointsRemaining()}");
+        }
+
+        private void OnEnable()
+        {
+            Reset();
         }
     }
 }

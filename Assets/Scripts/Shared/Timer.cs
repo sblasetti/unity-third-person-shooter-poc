@@ -20,7 +20,10 @@ public class Timer : MonoBehaviour
 
     public void Add(float inSeconds, Action method)
     {
-        events.Add(new TimedEvent { TimeToExecute = inSeconds, Method = method });
+        events.Add(new TimedEvent { 
+            TimeToExecute = Time.time + inSeconds, 
+            Method = method 
+        });
     }
 
     void Update()

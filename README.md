@@ -33,3 +33,7 @@ Tutorial playlist: https://www.youtube.com/playlist?list=PLJfktYG5YLJGK-ROk1Gj1_
 ## Episode 7
 
 - 2D textore rendering for the crosshair
+
+## Episode 8:
+
+- Destructables are responsibles for time to respawn
