@@ -30,7 +30,7 @@ public class ThirdPersonCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         var rightOffset = localPlayer.transform.forward * cameraOffset.x;
         var upOffset = localPlayer.transform.forward * cameraOffset.y;

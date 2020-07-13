@@ -17,13 +17,16 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, timeToLive);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit!: " + other);
+        var destructable = other.transform.GetComponent<Destructable>();
+        if (destructable == null) return;
+
+        destructable.TakeDamage(damage);
     }
 }
