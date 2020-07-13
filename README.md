@@ -25,3 +25,11 @@ Tutorial playlist: https://www.youtube.com/playlist?list=PLJfktYG5YLJGK-ROk1Gj1_
 ## Episode 5
 
 - The projectile sets its own movement
+
+## Episode 6
+
+- A destructable handles its hits and damage and triggers events on hits and death
+
+## Episode 7
+
+- 2D textore rendering for the crosshair
