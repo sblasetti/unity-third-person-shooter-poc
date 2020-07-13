@@ -8,6 +8,7 @@ public class GameManager
     public event Action<Player> OnLocalPlayerJoined;
     private GameObject gameObject;
     private InputController inputController;
+    private Timer timer;
 
     #region Singleton
     private static GameManager gameManager;
@@ -32,6 +33,16 @@ public class GameManager
         }
 
         return inputController;
+    }
+
+    public Timer GetTimer()
+    {
+        if (timer == null)
+        {
+            timer = gameObject.GetComponent<Timer>();
+        }
+
+        return timer;
     }
 
     private Player localPlayer;
