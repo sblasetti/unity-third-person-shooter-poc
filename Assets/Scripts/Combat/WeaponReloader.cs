@@ -15,11 +15,23 @@ public class WeaponReloader : MonoBehaviour
     int shotsFiredInClip;
     bool isReloading;
 
-    int shotsRemainingInClip => clipSize - shotsFiredInClip;
-    //public bool IsReloading => isReloading;
+    public int ShotsRemainingInClip => clipSize - shotsFiredInClip;
+    public bool IsReloading => isReloading;
+
+    private void Awake()
+    {
+        ammo = maxAmmo; // TODO: using max ammo for now
+    }
+
+    public void TakeAmmoFromClip(int amount)
+    {
+        shotsFiredInClip += amount;
+    }
 
     public void Reload()
     {
+        print("Reload started");
+
         if (isReloading) return;
 
         isReloading = true;
@@ -28,6 +40,8 @@ public class WeaponReloader : MonoBehaviour
 
     public void ExecuteReload()
     {
+        print("Reload executed");
+
         isReloading = false;
         ammo -= shotsFiredInClip;
         shotsFiredInClip = 0;

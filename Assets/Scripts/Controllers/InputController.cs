@@ -8,6 +8,7 @@ public class InputController : MonoBehaviour
     public float Vertical;
     public Vector2 MouseCoordinates;
     public bool Fire1;
+    public bool Reload;
 
     // Update is called once per frame
     void Update()
@@ -20,5 +21,7 @@ public class InputController : MonoBehaviour
         MouseCoordinates = new Vector2(x, y);
 
         Fire1 = Input.GetButton("Fire1");
+
+        Reload = Input.GetKey(KeyCode.R);
     }
 }
