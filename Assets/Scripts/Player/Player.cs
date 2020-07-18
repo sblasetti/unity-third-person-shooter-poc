@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     {
         public Vector2 Damping;
         public Vector2 Sensitivity;
+        public bool LockMouse;
     }
 
     [SerializeField]
@@ -46,9 +47,14 @@ public class Player : MonoBehaviour
     void Awake()
     {
         // TODO: research about retrieving components using getters versus getting them in Awake/Start
-        
         inputController = GameManager.GetInstance().GetInputController();
         GameManager.GetInstance().LocalPlayer = this;
+
+        if (mouseControl.LockMouse)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     void Update()
