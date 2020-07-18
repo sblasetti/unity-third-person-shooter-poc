@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9be83def06fda04c83b97f81e5cb960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 2
   mouseControl:
     Damping: {x: 5, y: 2}
     Sensitivity: {x: 2, y: 6}
@@ -887,7 +887,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7de6761d70ed1f54ea281705e6cc3c8f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.06905998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7de6761d70ed1f54ea281705e6cc3c8f,
         type: 3}
@@ -897,7 +897,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7de6761d70ed1f54ea281705e6cc3c8f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99761254
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7de6761d70ed1f54ea281705e6cc3c8f,
         type: 3}
@@ -912,7 +912,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7de6761d70ed1f54ea281705e6cc3c8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 7.92
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7de6761d70ed1f54ea281705e6cc3c8f,
         type: 3}
