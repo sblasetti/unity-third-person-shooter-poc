@@ -16,7 +16,14 @@ public class Player : MonoBehaviour
     }
 
     [SerializeField]
-    float speed;
+    float runSpeed;
+    [SerializeField]
+    float walkSpeed;
+    [SerializeField]
+    float sprintSpeed;
+    [SerializeField]
+    float crouchSpeed;
+
     [SerializeField]
     MouseInput mouseControl;
     InputController inputController;
@@ -59,13 +66,35 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        var direction = new Vector2(inputController.Vertical * speed, inputController.Horizontal * speed);
-        GetMoveController().Move(direction);
+        Move();
 
+        LookAround();
+    }
+
+    private void LookAround()
+    {
         mouseInput.x = Mathf.Lerp(mouseInput.x, inputController.MouseCoordinates.x, 1 / mouseControl.Damping.x);
         transform.Rotate(Vector3.up, mouseInput.x * mouseControl.Sensitivity.x);
 
         mouseInput.y = Mathf.Lerp(mouseInput.y, inputController.MouseCoordinates.y, 1 / mouseControl.Damping.y);
         GetCrosshair().LookHeight(mouseInput.y * mouseControl.Sensitivity.y);
+    }
+
+    private void Move()
+    {
+        var moveSpeed = runSpeed;
+
+        if (inputController.IsWalking)
+        {
+            moveSpeed = walkSpeed;
+        }
+
+        if (inputController.IsSprinting)
+        {
+            moveSpeed = sprintSpeed;
+        }
+
+        var direction = new Vector2(inputController.Vertical * moveSpeed, inputController.Horizontal * moveSpeed);
+        GetMoveController().Move(direction);
     }
 }

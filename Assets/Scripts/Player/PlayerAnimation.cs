@@ -17,5 +17,8 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator.SetFloat("Vertical", inputController.Vertical);
         animator.SetFloat("Horizontal", inputController.Horizontal);
+
+        animator.SetBool("IsWalking", inputController.IsWalking);
+        animator.SetBool("IsSprinting", inputController.IsSprinting);
     }
 }

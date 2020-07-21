@@ -9,6 +9,9 @@ public class InputController : MonoBehaviour
     public Vector2 MouseCoordinates;
     public bool Fire1;
     public bool Reload;
+    public bool IsWalking;
+    public bool IsSprinting;
+    public bool IsCrouched;
 
     // Update is called once per frame
     void Update()
@@ -23,5 +26,9 @@ public class InputController : MonoBehaviour
         Fire1 = Input.GetButton("Fire1");
 
         Reload = Input.GetKey(KeyCode.R);
+
+        IsCrouched = Input.GetKey(KeyCode.C);
+        IsWalking = Input.GetKey(KeyCode.LeftAlt);
+        IsSprinting = Input.GetKey(KeyCode.LeftShift);
     }
 }
