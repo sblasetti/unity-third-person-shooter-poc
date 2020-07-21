@@ -805,7 +805,7 @@ MonoBehaviour:
   runSpeed: 3.2
   walkSpeed: 1.8
   sprintSpeed: 8
-  crouchSpeed: 0
+  crouchSpeed: 1.8
   mouseControl:
     Damping: {x: 5, y: 2}
     Sensitivity: {x: 2, y: 6}

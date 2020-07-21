@@ -1,52 +1,12 @@
 fileFormatVersion: 2
-guid: 7de6761d70ed1f54ea281705e6cc3c8f
+guid: e3769685a6b70674f824ac8a67c1a824
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: None
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Soldier_body1
-    second: {fileID: 2100000, guid: 4ad7cf889b34bf34a8351c4ce4723739, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Soldier_head6
-    second: {fileID: 2100000, guid: 8f0fb49eb1581e84c97d22786cfdfbca, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Soldier_Body_diffuse
-    second: {fileID: 2800000, guid: 0816ce4ace9dc7c44a3fe47a28edfc96, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Soldier_Body_normal
-    second: {fileID: 2800000, guid: 406da07347bc34d4abcd3e1bdea6d13a, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Soldier_Body_specular
-    second: {fileID: 2800000, guid: 5d904762e6952e542a8c7bd917943543, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Soldier_head_diffuse
-    second: {fileID: 2800000, guid: e5f5ed40ee7fd67478af08fb08c4886a, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Soldier_head_normal
-    second: {fileID: 2800000, guid: 104b10f089a30ef4ebd7c4313cb45da8, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Soldier_head_specular
-    second: {fileID: 2800000, guid: 75ea5d6b9ed72cf49b8d08adee53ac35, type: 3}
+    second: Walk Crouching Backward
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -61,7 +21,10 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'swat:Neck1' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -75,19 +38,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: None
+      name: Walk Crouching Backward
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -140,41 +103,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 9ef20981c560c924691d99efd55c9779
-  - 43d8b71b2ef304d47b18b07b4dc0f316
-  - 5ea4e48ae6dcc8c4bba939ad5d665c2d
-  - 3e5c2327cff9648448e6a98203281600
-  - cd4eb2e895470d04b811d7f49f0c4ea3
-  - d1ff75b05457d23498a0e6f8b5e804c6
-  - c00b04b801ac6f44baa56344b5522c7d
-  - 379cd2672b316d74aac2bac3e4b2b543
-  - fb0c16853bcd8024f97ccd8b22ec47df
-  - 00c0fcc4a068b8f4d896ab763d32fa1b
-  - b6aaa0d6e71939548ab9908c64685739
-  - eb8ad1c8bc242b3448d41dbc4f7baba2
-  - 4b7bd431f40d12047bfb9b7ce86d9f80
-  - e3748d45d0dfaa645814c0011b2b388b
-  - a1d9b017bbb6b0449a7b35ccdfa90ea2
-  - 4ae4ecaae0ac0074e875da4c8b873dcc
-  - fea0e4d4abb1e2742a076a45132641d9
-  - 6fbf7ef333af8fe45915975ed5a0ae4d
-  - 91529fc6e5372d3459ba6f672f04dad9
-  - d872e2032548c5f42918fe8d5ccd27e8
-  - 2ca4e8bfee25b564183c5660dc456327
-  - 0b6e1d5fb57ce694588e5c02e9a453d0
-  - 34afd0d1845c6974b8ca71ec77fb6d83
-  - e3769685a6b70674f824ac8a67c1a824
-  - d2294625b2bdee7489e9329a0d5168dc
-  - bee01fde7bc1231449fae3af0a7e2101
-  - 046eb707fc4b270458c0bd5df7991a3d
-  - b1351a1042deaeb49821ca966d607f2b
-  - f46bce340d6d6d948a82b8ef3319dcc2
-  - 7eb12f92c6cd74047a0847ae9fdc7c2b
-  - caa285f2449927c4dbdd06d3fde5787c
-  - 64d1e86b685a4ab45a3ddf728687da1c
-  - e1f5714fb6bd5df4590695a561d8ac1c
-  - 9b7d6c8e1bf77764b9473289f5c35eab
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -1012,11 +941,12 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 7de6761d70ed1f54ea281705e6cc3c8f,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 2
   additionalBone: 0
   userData: 
   assetBundleName: 

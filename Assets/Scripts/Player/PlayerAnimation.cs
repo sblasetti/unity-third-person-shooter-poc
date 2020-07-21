@@ -20,5 +20,6 @@ public class PlayerAnimation : MonoBehaviour
 
         animator.SetBool("IsWalking", inputController.IsWalking);
         animator.SetBool("IsSprinting", inputController.IsSprinting);
+        animator.SetBool("IsCrouched", inputController.IsCrouched);
     }
 }

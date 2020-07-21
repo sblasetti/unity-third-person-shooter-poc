@@ -94,6 +94,11 @@ public class Player : MonoBehaviour
             moveSpeed = sprintSpeed;
         }
 
+        if (inputController.IsCrouched)
+        {
+            moveSpeed = crouchSpeed;
+        }
+
         var direction = new Vector2(inputController.Vertical * moveSpeed, inputController.Horizontal * moveSpeed);
         GetMoveController().Move(direction);
     }
