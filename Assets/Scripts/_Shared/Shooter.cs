@@ -8,6 +8,8 @@ public class Shooter : MonoBehaviour
     float rateOfFire;
     [SerializeField]
     Projectile projectile;
+    [SerializeField]
+    Transform hand;
 
     [HideInInspector]
     Transform muzzle;
@@ -22,6 +24,9 @@ public class Shooter : MonoBehaviour
     {
         muzzle = transform.Find("Muzzle");
         reloader = GetComponent<WeaponReloader>();
+
+        // TODO: confirm if this is the right place to make this association
+        transform.SetParent(hand);
     }
 
     public virtual void Fire()
