@@ -6,20 +6,22 @@ using UnityEngine;
 
 public class Container : MonoBehaviour
 {
-    private List<ContainerItem> items;
+    public List<ContainerItem> items;
 
-    class ContainerItem
+    [Serializable]
+    public class ContainerItem
     {
         public Guid Id;
         public string Name;
         public int Maximum;
+        public int taken;
 
-        private int remaining;
+        private int remaining => Maximum - taken;
 
         internal int Take(int amount)
         {
             var take = Math.Min(remaining, amount);
-            remaining -= take;
+            taken += take;
             return take;
         }
     }
@@ -46,7 +48,7 @@ public class Container : MonoBehaviour
     public int Take(Guid id, int amount)
     {
         var item = items.FirstOrDefault(x => x.Id == id);
-        if (item == null) return -1;
+        if (item == null) return 0;
 
         return item.Take(amount);
     }

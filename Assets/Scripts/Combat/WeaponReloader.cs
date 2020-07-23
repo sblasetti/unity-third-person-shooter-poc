@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,17 +11,21 @@ public class WeaponReloader : MonoBehaviour
     float reloadTime;
     [SerializeField]
     int clipSize;
+    [SerializeField]
+    Container inventory;
 
-    int ammo;
+    [SerializeField]
     int shotsFiredInClip;
     bool isReloading;
+    private Guid containerItemId;
 
     public int ShotsRemainingInClip => clipSize - shotsFiredInClip;
     public bool IsReloading => isReloading;
 
     private void Awake()
     {
-        ammo = maxAmmo; // TODO: using max ammo for now
+        // TODO: add ammo if collecting bullets?
+        containerItemId = inventory.Add(this.name, maxAmmo);
     }
 
     public void TakeAmmoFromClip(int amount)
@@ -40,17 +45,9 @@ public class WeaponReloader : MonoBehaviour
 
     public void ExecuteReload()
     {
-        print("Reload executed");
-
+        var ammoFromInventory = inventory.Take(containerItemId, shotsFiredInClip);
+        shotsFiredInClip -= ammoFromInventory;
         isReloading = false;
-        ammo -= shotsFiredInClip;
-        shotsFiredInClip = 0;
-
-        // TODO: why could ammo be negative?
-        if (ammo < 0)
-        {
-            shotsFiredInClip -= ammo;
-            ammo = 0;
-        }
+        print("Reload executed");
     }
 }
