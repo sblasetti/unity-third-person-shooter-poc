@@ -8,26 +8,14 @@ public class Shooter : MonoBehaviour
     float rateOfFire;
     [SerializeField]
     Projectile projectile;
-    [SerializeField]
-    Transform hand;
-
     [HideInInspector]
     Transform muzzle;
 
+    Transform weaponsContainerTransform;
     WeaponReloader reloader;
 
     float nextFireAllowed;
     internal bool canFire;
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-        muzzle = transform.Find("Muzzle");
-        reloader = GetComponent<WeaponReloader>();
-
-        // TODO: confirm if this is the right place to make this association
-        transform.SetParent(hand);
-    }
 
     public virtual void Fire()
     {
@@ -48,7 +36,13 @@ public class Shooter : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    void Awake()
+    {
+        weaponsContainerTransform = transform.Find("Weapons");
+        muzzle = transform.Find("Muzzle");
+        reloader = GetComponent<WeaponReloader>();
+    }
+
     void Update()
     {
         if (reloader != null && !reloader.IsReloading && GameManager.GetInstance().GetInputController().Reload)
