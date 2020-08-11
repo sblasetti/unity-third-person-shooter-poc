@@ -10,6 +10,7 @@ public class InputController : MonoBehaviour
 
     public bool Fire1;
     public bool Reload;
+    public bool ChangeWeapon;
     public bool MouseWheelUp;
     public bool MouseWheelDown;
 
@@ -29,6 +30,7 @@ public class InputController : MonoBehaviour
 
         Fire1 = Input.GetButton("Fire1");
         Reload = Input.GetKey(KeyCode.R);
+        ChangeWeapon = Input.GetKey(KeyCode.T);
         MouseWheelUp = Input.GetAxis("Mouse ScrollWheel") > 0;
         MouseWheelDown = Input.GetAxis("Mouse ScrollWheel") < 0;
 

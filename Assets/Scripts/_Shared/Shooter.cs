@@ -39,7 +39,7 @@ public class Shooter : MonoBehaviour
     void Awake()
     {
         weaponsContainerTransform = transform.Find("Weapons");
-        muzzle = transform.Find("Muzzle");
+        muzzle = transform.Find("Container/Muzzle");
         reloader = GetComponent<WeaponReloader>();
     }
 

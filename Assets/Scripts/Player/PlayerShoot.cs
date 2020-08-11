@@ -68,14 +68,22 @@ public class PlayerShoot : MonoBehaviour
 
     private void SetWeaponActive(Shooter weapon, bool active)
     {
+        // TODO: find a better way to set weapons to character's hand
         var parent = active ? hand : weaponsContainer;
         weapon.transform.SetParent(parent);
+
+        if (active)
+        {
+            weapon.transform.localPosition = Vector3.zero;
+            weapon.transform.localRotation = Quaternion.identity;
+        }
+
         weapon.gameObject.SetActive(active);
     }
 
     private void Update()
     {
-        if (inputController.MouseWheelUp)
+        if (inputController.MouseWheelUp || inputController.ChangeWeapon)
             SwitchWeapon(1);
 
         if (inputController.MouseWheelDown)
