@@ -7,6 +7,7 @@ using UnityEngine;
 public class Container : MonoBehaviour
 {
     public List<ContainerItem> items;
+    public Action OnReady;
 
     [Serializable]
     public class ContainerItem
@@ -29,6 +30,7 @@ public class Container : MonoBehaviour
     private void Awake()
     {
         items = new List<ContainerItem>();
+        OnReady?.Invoke();
     }
 
     public Guid Add(string name, int max)

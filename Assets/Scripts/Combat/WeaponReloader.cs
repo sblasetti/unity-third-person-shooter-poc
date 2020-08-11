@@ -24,8 +24,11 @@ public class WeaponReloader : MonoBehaviour
 
     private void Awake()
     {
-        // TODO: add ammo if collecting bullets?
-        containerItemId = inventory.Add(this.name, maxAmmo);
+        inventory.OnReady += () =>
+        {
+            // TODO: add ammo if collecting bullets?
+            containerItemId = inventory.Add(this.name, maxAmmo);
+        };
     }
 
     public void TakeAmmoFromClip(int amount)
